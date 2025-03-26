@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Capture Form</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { max-width: 500px; margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center p-4 bg-white shadow rounded">
+        <h1 class="mb-3">🚀 Get Your Free </br>Stoic Nomad </br>E-book Now!</h1>
+        <p class="text-muted">Enter your name and email to receive exclusive Stoicism tips!</p>
+        
+        <form action="/" method="POST">
+            <div class="mb-3">
+                <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                <br/>
+                <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg w-100">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Flash Messages (Success Notification) -->
+{% with messages = get_flashed_messages(with_categories=True) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div class="alert alert-{{ category }} text-center">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+
+</body>
+</html>

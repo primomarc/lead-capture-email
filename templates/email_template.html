@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Hi {{ name }},</p>
+
+        <p>We’re thrilled to welcome you to the <b>STOIC NOMAD</b> community! 🎉</p>
+        
+        <p>Since you're interested in <b>{{ interest }}</b>, we’ve included our top resources to help you on your journey:</p>
+        
+        <ul>
+            {% if interest == "Self-Improvement" %}
+                <li>📖 "The Stoic Path to Success" eBook (Attached!)</li>
+                <li>🎙️ Podcast: Mastering Minimalism & Growth</li>
+            {% elif interest == "Travel & Adventure" %}
+                <li>🌍 The Ultimate Digital Nomad Guide</li>
+                <li>🏕️ Best Remote Work Destinations in 2024</li>
+            {% else %}
+                <li>🔍 Explore our blog for the latest insights!</li>
+            {% endif %}
+        </ul>
+        
+        <p>Click the button below to start your journey:</p>
+        <a href="https://stoicnomad.com/resources" class="button">View Resources</a>
+        
+        <p>Enjoy your journey!</p>
+        
+        <p class="footer">© 2024 Stoic Nomad | <a href="#">Unsubscribe</a></p>        
+    </div>
+</body>
+</html>
